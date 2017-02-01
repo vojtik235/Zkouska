@@ -1,21 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package stopky;
 
-/**
- *
- * @author bleha
- */
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class Stopky {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Casovac c = new Casovac(1000);
+        c.addListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                System.out.println("Provedla se operace.");
+            }
+        });
+        c.start();
     }
     
 }
